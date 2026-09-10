@@ -1,0 +1,6 @@
+{
+  "type": "module",
+  "scripts": {
+    "test": "node --test next_move.test.js tic_tac_toe_rules.test.js tic_tac_toe_view.test.js"
+  }
+}

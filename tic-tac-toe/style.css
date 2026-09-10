@@ -1,0 +1,112 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f4f6f8;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #222;
+  padding: 1rem;
+}
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.75rem;
+}
+
+.status-message {
+  font-size: 1.1rem;
+  font-weight: 600;
+  min-height: 1.5em;
+  margin: 0;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 8px;
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 1 / 1;
+}
+
+.cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(1.75rem, 8vw, 2.5rem);
+  font-weight: bold;
+  background-color: #eef1f4;
+  border: 2px solid #cbd3da;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.15s ease-in-out;
+  color: #1a1a1a;
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
+
+.cell:hover:not(:disabled) {
+  background-color: #dfe6ec;
+}
+
+.cell:disabled {
+  cursor: not-allowed;
+}
+
+.cell.mark-x {
+  color: #1976d2;
+}
+
+.cell.mark-o {
+  color: #d32f2f;
+}
+
+.cell.winning-cell {
+  background-color: #c8f7c5;
+  border-color: #4caf50;
+}
+
+.restart-button {
+  padding: 0.6rem 1.4rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #1976d2;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.15s ease-in-out;
+}
+
+.restart-button:hover {
+  background-color: #1558a6;
+}
+
+.restart-button:focus-visible,
+.cell:focus-visible {
+  outline: 3px solid #f4b400;
+  outline-offset: 2px;
+}
